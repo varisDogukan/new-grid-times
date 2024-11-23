@@ -18,7 +18,7 @@ const MainStoryGrid = () => {
 
       <SecondaryStorySection>
         <StoryList>
-          {SECONDARY_STORIES.map((story, index) => (
+          {SECONDARY_STORIES.map((story) => (
             <VerticalStoryWrapper key={story.id}>
               <SecondaryStory {...story} />
             </VerticalStoryWrapper>
@@ -29,7 +29,7 @@ const MainStoryGrid = () => {
       <OpinionSection>
         <SectionTitle>Opinion</SectionTitle>
         <OpinionStoryList>
-          {OPINION_STORIES.map((story, index) => (
+          {OPINION_STORIES.map((story) => (
             <OpinionStoryWrapper key={story.id}>
               <OpinionStory {...story} />
             </OpinionStoryWrapper>

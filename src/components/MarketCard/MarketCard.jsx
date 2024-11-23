@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 // HACK: Normally, we'd receive a prop like `priceData` and
 // draw the graph based on that data. Because our graphs are
@@ -82,5 +83,11 @@ const Percentage = styled.span`
   font-family: var(--font-family-sans-serif);
   color: var(--color);
 `;
+
+MarketCard.propTypes = {
+  tickerSymbol: PropTypes.string,
+  exchangeName: PropTypes.string,
+  percentChange: PropTypes.number,
+};
 
 export default MarketCard;

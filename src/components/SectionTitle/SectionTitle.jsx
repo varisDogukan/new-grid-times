@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const SectionTitle = ({ children, cornerLink }) => {
   return (
@@ -35,5 +36,10 @@ const CornerLink = styled.a`
     text-underline-offset: 2px;
   }
 `;
+
+SectionTitle.propTypes = {
+  children: PropTypes.element,
+  cornerLink: PropTypes.object,
+};
 
 export default SectionTitle;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const MiniStory = ({ id, image, title }) => {
   return (
@@ -30,5 +31,11 @@ const Title = styled.h3`
   line-height: 1.3;
   color: var(--color-gray-900);
 `;
+
+MiniStory.propTypes = {
+  id: PropTypes.string,
+  image: PropTypes.string,
+  title: PropTypes.string,
+};
 
 export default MiniStory;
