@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const SecondaryStory = ({ id, title, image, location, abstract }) => {
   return (
@@ -44,6 +45,21 @@ const Abstract = styled.p`
   grid-area: abstract;
   font-size: 1rem;
   white-space: pre-wrap;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  align-self: start;
+
+  /* Necessary for line-clamping */
+  overflow: hidden;
 `;
+
+SecondaryStory.propTypes = {
+  id: PropTypes.string,
+  title: PropTypes.string,
+  image: PropTypes.object,
+  location: PropTypes.string,
+  abstract: PropTypes.string,
+};
 
 export default SecondaryStory;

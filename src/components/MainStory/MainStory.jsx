@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
+import { QUERIES } from "../../constants";
 
 const MainStory = ({ id, title, image, location, abstract, ...delegated }) => {
   return (
@@ -36,6 +38,20 @@ const Abstract = styled.p`
   font-size: 1rem;
   margin-bottom: 1em;
   white-space: pre-wrap;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
+
+  /* Necessary for line-clamping */
+  overflow: hidden;
+
+  @media ${QUERIES.tabletAndUp} {
+    -webkit-line-clamp: 16;
+  }
+
+  @media ${QUERIES.laptopAndUp} {
+    -webkit-line-clamp: 10;
+  }
 `;
 
 const Location = styled.span`
@@ -51,5 +67,13 @@ const ReadMore = styled.a`
     text-underline-offset: 1px;
   }
 `;
+
+MainStory.propTypes = {
+  id: PropTypes.string,
+  title: PropTypes.string,
+  image: PropTypes.object,
+  location: PropTypes.string,
+  abstract: PropTypes.string,
+};
 
 export default MainStory;
